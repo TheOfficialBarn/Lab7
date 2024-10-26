@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rakkas&display=swap');
+
+body {
+	height: 100%;
+	background-image: linear-gradient(silver,gray );
+	background-attachment: fixed;
+}
+
+.HomeTitle{
+	font-family: 'Rakkas';
+	font-size: 48px;
+	color: black;
+	display: block; /* ensures that the element takes up the full width available */
+	text-align: center;
+}
+
+nav {
+	background-color: #333;
+	border-radius: 16px;
+}
+
+nav ul {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+	list-style: none;
+}
+
+nav ul li {
+	margin: 0 20px;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+}
+
+main {
+	margin: 80px 30%;
+}
+
+h2 {
+	font-family: 'Noto Sans';
+	font-size: 32px;
+	color: black;
+}
+
+h3 {
+	font-family: 'Noto Sans';
+	font-size: 16px;
+	color: black;
+}
+
+p {
+	font-family: 'Noto Sans';
+	font-size: 16px;
+	color: black;
+}
+
+.formmm{
+	background-color: rgb(143, 130, 122);
+	padding: 48px;
+	border-radius: 16px;
+	font-family: 'Noto Sans';
+
+}
+
+input {
+	display: block;
+	margin: 8px 0;
+	background-color: lightgray;
+	border-radius: 8px;
+	height: 20px;
+	min-width: max-content;
+	border: none;
+	padding: 6px;
+}
+
+button {
+	color: white;
+	background-color: black;
+	border-radius: 16px;
+	border: none;
+	display: block;
+	min-width: 80px;
+	padding: 6px;
+	height: 32px;
+	margin-top: 16px;
+
+}
