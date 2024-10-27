@@ -31,9 +31,13 @@ nav ul li {
 }
 
 a {
-	color: white;
+	color: silver;
 	text-decoration: none;
 	padding: 10px;
+}
+
+a:hover {
+	color: white
 }
 
 main {
@@ -118,4 +122,9 @@ iframe {
 
 #tableContainer {
 	margin-top: 24px;
+}
+
+::selection {
+	background: aqua;
+	color: whitesmoke;
 }
