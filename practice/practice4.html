@@ -25,11 +25,32 @@
 			<h2>Welcome to Practice 4</h2>
 
 			<h3>Multiplication Table</h3>
-			<form action="../php/table.php" method="POST">
-				<label for="number">Enter Number:</label>
-				<input type="number" id="number" name="number" min="1" required>
-				<button type="submit">Generate Table</button>
-			</form>
+
+			<div class="formmm">
+				<form action="../php/table.php" method="POST">
+					<label for="number">Enter Number:</label>
+					<input type="number" id="number" name="number" min="1" required>
+					<button type="submit">Generate</button>
+				</form>
+			</div>
+
+			<div id="tableContainer"></div>
+			<script>
+				document.getElementById('tableForm').addEventListener('submit', function(event) {
+					event.preventDefault();
+					const number = document.getElementById('number').value;
+	
+					const xhr = new XMLHttpRequest();
+					xhr.open('POST', '../php/table.php', true);
+					xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+					xhr.onreadystatechange = function() {
+						if (xhr.readyState === 4 && xhr.status === 200) {
+							document.getElementById('tableContainer').innerHTML = xhr.responseText;
+						}
+					};
+					xhr.send('number=' + number);
+				});
+			</script>
 		</main>
 	</body>
 </html>
