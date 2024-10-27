@@ -40,6 +40,10 @@ a:hover {
 	color: white
 }
 
+.HomeTitle:hover {
+	color: black;
+}
+
 main {
 	margin: 80px 30%;
 }
