@@ -26,15 +26,20 @@
 			<p>Click on the links above to explore different practice problems that develop my web-development skills through CSS, HTML, & PHP.</p>
 
 			<h3>My CSS Styles</h3>
-			<pre><code id="cssContent"></code></pre>
+			<div class="cssSnippet">
+				<pre>
+					<code id="cssContent"></code>
+				</pre>
+			</div>
+			
 		</main>
-		<script>
-            fetch('styles.css')
-                .then(response => response.text())
-                .then(data => {
+		<script> //This is only gonna work on the cycle server as fetch() has to be on a server to work properly.
+            fetch('styles.css') //Fetch file
+                .then(response => response.text()) //Then we turn the file into text
+                .then(data => { //Then we update text in website
                     document.getElementById('cssContent').textContent = data;
                 })
-                .catch(error => console.error('Error fetching CSS:', error));
+                .catch(error => console.error('Error fetching CSS:', error)); //If sum go wrong
 		</script>
 	</body>
 </html>
