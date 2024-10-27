@@ -28,9 +28,9 @@
 			<div class="formmm">
 				<form id="passwordForm">
 					<label for="NewPassword">Password</label>
-					<input type="text" name="p1" id="p1" placeholder="Enter new password">
+					<input type="password" name="p1" id="p1" placeholder="Enter new password">
 					<label for="VerifyPassword">Verify Password</label>
-					<input type="text" name="p2" id="p2" placeholder="Confirm password">
+					<input type="password" name="p2" id="p2" placeholder="Confirm password">
 					<button type="submit">Submit</button> 
 				</form>
 				<p id="errorMessage" style="color: red;"></p>
@@ -41,11 +41,12 @@
 						const verifyPassword = document.getElementById('p2').value;
 						const errorMessage = document.getElementById('errorMessage');
 			
-						if (password !== verifyPassword) {
+						if ((password !== verifyPassword) || (password.length < 8)) {
 							event.preventDefault();
-							errorMessage.textContent = 'Passwords do not match!';
+							errorMessage.textContent = 'Passwords do not match or are less than 8 characters!';
 						} else {
 							errorMessage.textContent = '';
+							alert("Success!")
 						}
 					});
 				</script>
