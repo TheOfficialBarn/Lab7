@@ -109,7 +109,7 @@ iframe {
 	border-radius: 16px;
 }
 
-.cssSnippet {
+.cssSnippet, #tableContainer {
 	background-image: linear-gradient(gray, silver);
 	box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.36);
 	padding: 24px;
