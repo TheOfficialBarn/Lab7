@@ -34,7 +34,7 @@
 				</form>
 			</div>
 
-			<div id="tableContainer"></div>
+			<div id="tableContainer" style="display: none;"></div>
 			<script>
 				document.getElementById('tableForm').addEventListener('submit', function(event) {
 					event.preventDefault();
@@ -46,6 +46,7 @@
 					xhr.onreadystatechange = function() {
 						if (xhr.readyState === 4 && xhr.status === 200) {
 							document.getElementById('tableContainer').innerHTML = xhr.responseText;
+							document.getElementById('tableContainer').style.display = 'block';
 						}
 					};
 					xhr.send('number=' + encodeURIComponent(number));
