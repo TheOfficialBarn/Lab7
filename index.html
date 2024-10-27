@@ -24,17 +24,17 @@
 		<main>
 			<h2>Welcome to the Home Page</h2>
 			<p>Click on the links above to explore different practice problems that develop my web-development skills through CSS, HTML, & PHP.</p>
+
+			<h3>My CSS Styles</h3>
+			<pre><code id="cssContent"></code></pre>
 		</main>
-
-
-
-
-
-
-
-
-
-
-
+		<script>
+            fetch('styles.css')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('cssContent').textContent = data;
+                })
+                .catch(error => console.error('Error fetching CSS:', error));
+		</script>
 	</body>
 </html>
