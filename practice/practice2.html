@@ -23,7 +23,49 @@
 
 		<main>
 			<h2>Welcome to Practice 2</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur, orci id sollicitudin hendrerit, neque enim luctus sapien, quis hendrerit elit urna at dui. Suspendisse commodo nisi nec quam scelerisque, auctor pulvinar magna euismod. Etiam id dolor quis nunc consectetur dignissim. Quisque diam mi, ullamcorper maximus diam pharetra, ultrices varius libero. Nam auctor, urna vel mollis lacinia, leo orci sollicitudin eros, ultricies molestie sem sem euismod est. Donec euismod urna est, a scelerisque elit sodales id. Integer accumsan ornare leo, id cursus dolor laoreet sit amet. Etiam lacinia a dui sit amet posuere. Donec at tortor sed velit laoreet auctor. Vivamus scelerisque aliquet varius.<br>Cras hendrerit felis nisi, id rhoncus risus ullamcorper sit amet. Fusce ut nisl nisl. Ut nec tempor lectus, vitae molestie ligula. Nam velit enim, volutpat sit amet euismod vitae, mollis ut urna. Morbi tincidunt lacus ut nibh luctus, quis pretium lectus dapibus. Vivamus sit amet ex auctor, hendrerit diam non, congue urna. Nullam eget volutpat enim, vel bibendum risus. Sed laoreet odio sed lectus consectetur feugiat. Praesent interdum lobortis turpis non fringilla. Cras feugiat pretium lorem luctus placerat. Ut est quam, aliquet in commodo in, luctus vitae nibh. Nulla nec posuere ipsum. Phasellus lacinia velit finibus cursus consectetur. Ut non turpis et dolor accumsan commodo at vulputate nulla. Aenean ultricies tortor eget blandit sollicitudin.</p>
+			<div class="practice2">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consectetur, orci id sollicitudin hendrerit, neque enim luctus sapien, quis hendrerit elit urna at dui. Suspendisse commodo nisi nec quam scelerisque, auctor pulvinar magna euismod. Etiam id dolor quis nunc consectetur dignissim. Quisque diam mi, ullamcorper maximus diam pharetra, ultrices varius libero. Nam auctor, urna vel mollis lacinia, leo orci sollicitudin eros, ultricies molestie sem sem euismod est. Donec euismod urna est, a scelerisque elit sodales id. Integer accumsan ornare leo, id cursus dolor laoreet sit amet. Etiam lacinia a dui sit amet posuere. Donec at tortor sed velit laoreet auctor. Vivamus scelerisque aliquet varius.<br>Cras hendrerit felis nisi, id rhoncus risus ullamcorper sit amet. Fusce ut nisl nisl. Ut nec tempor lectus, vitae molestie ligula. Nam velit enim, volutpat sit amet euismod vitae, mollis ut urna. Morbi tincidunt lacus ut nibh luctus, quis pretium lectus dapibus. Vivamus sit amet ex auctor, hendrerit diam non, congue urna. Nullam eget volutpat enim, vel bibendum risus. Sed laoreet odio sed lectus consectetur feugiat. Praesent interdum lobortis turpis non fringilla. Cras feugiat pretium lorem luctus placerat. Ut est quam, aliquet in commodo in, luctus vitae nibh. Nulla nec posuere ipsum. Phasellus lacinia velit finibus cursus consectetur. Ut non turpis et dolor accumsan commodo at vulputate nulla. Aenean ultricies tortor eget blandit sollicitudin.</p>
+			</div>
+				<div class="formmm">
+					<form id="colorForm">
+						<label>Red Value</label>
+						<input type="text" id="red" placeholder="R">
+						<label>Green Value</label>
+						<input type="text" id="green" placeholder="G">
+						<label>Blue Value</label>
+						<input type="text" id="blue" placeholder="B">
+						<button type="submit">Submit</button>
+					</form>
+					<p id="errorMessage" style="color: red;"></p>
+				</div>
+				
+				<script>
+					document.getElementById('colorForm').addEventListener('submit', function(event) {
+						event.preventDefault();
+						
+						const red = document.getElementById('red').value;
+						const green = document.getElementById('green').value;
+						const blue = document.getElementById('blue').value;
+						const errorMessage = document.getElementById('errorMessage');
+						
+						// Validate single-character hex values
+						const singleHexPattern = /^[0-9A-Fa-f]{1}$/;
+						if (!singleHexPattern.test(red) || !singleHexPattern.test(green) || !singleHexPattern.test(blue)) {
+							errorMessage.textContent = 'Please enter valid single-character hex values for R, G, and B.';
+							return;
+						}
+						
+						// Combine single-character hex values into a full hex color
+						const fullHexColor = `#${red}${red}${green}${green}${blue}${blue}`;
+						
+						// Change the border color of the element with class "practice2"
+						const practice2Element = document.querySelector('.practice2');
+						practice2Element.style.borderColor = fullHexColor;
+						
+						errorMessage.textContent = ''; // Clear any previous error messages
+					});
+				</script>
+			</div>
 		</main>
 
 
